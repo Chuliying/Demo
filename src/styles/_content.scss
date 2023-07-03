@@ -1,0 +1,167 @@
+@function space($num) {
+    @return calc($num * var(--space));
+}
+
+$xs: 768px;
+$md: 1024px;
+$lg: 1440px;
+
+.content_container {
+    padding-top: space(1.5);
+
+    h1 {
+        padding-top: space(8);
+        text-align: center;
+        font-weight: normal;
+    }
+
+    .category-title {
+        padding-top: space(1.5);
+        font-weight: normal;
+        text-align: center;
+        color: var(--soft--color);
+    }
+
+    .img_box {
+        max-width: 1440px;
+        margin: auto;
+        margin-bottom: space(-5);
+    }
+
+    .time {
+        margin-top: space(3);
+        text-align: center;
+        margin-bottom: space(3);
+    }
+
+    .content {
+        background: var(--white-color);
+        padding: space(2.5) space(0);
+        border-bottom: solid 1px var(--theme--color);
+        @media (max-width: $xs) {
+            padding: space(2) space(1);
+        }
+
+        ol,
+        ul {
+            padding: space(0.75) 0;
+        }
+        .content-main {
+            color: var(--theme--color);
+            max-width: 900px;
+            margin: auto;
+            border-left: solid 1px var(--theme--color);
+            border-right: solid 1px var(--theme--color);
+            padding: 0 space(3);
+            @media (max-width: $xs) {
+                padding: 0 space(2);
+            }
+            hr {
+                margin: 0;
+                border-color: #000;
+            }
+        }
+        .content-head {
+            display: flex;
+            flex-flow: row;
+            padding: space(1) 0 space(2);
+            border-bottom: solid 1px var(--theme--color);
+            span {
+                font-size: inherit;
+            }
+        }
+        .content-body {
+            .content_block {
+                padding-top: space(2);
+                padding-bottom: space(2);
+                border-bottom: solid 1px var(--theme--color);
+
+                p {
+                    padding: space(1) 0;
+                }
+            }
+            .credit_box {
+                h5 {
+                    margin-top: space(2);
+                    margin-bottom: space(1);
+                }
+                p {
+                    white-space: pre-wrap;
+                }
+                text-align: center;
+                padding-bottom: space(2.5);
+                padding-top: space(1);
+            }
+
+            .relatedBox {
+                .content_block {
+                    padding-bottom: space(3.5);
+                    @media (max-width: $xs) {
+                        border-bottom: 0;
+                    }
+                }
+
+                hr {
+                    margin: space(2.5) auto;
+                }
+
+                h5 {
+                    text-align: center;
+                }
+                p {
+                    text-align: center;
+                    padding: space(0.25);
+                }
+            }
+        }
+
+        a {
+            color: var(--highlight-color);
+        }
+    }
+}
+
+.content-gallery {
+    margin-bottom: space(-2.5);
+    text-align: center;
+    padding: space(2.5);
+    padding-bottom: space(3.5);
+    background-color: var(--theme--color);
+    font-size: 0;
+    @media (max-width: $xs) {
+        padding: space(2.5) 0;
+        margin-left: space(-1);
+        margin-right: space(-1);
+    }
+    div {
+        text-align: center;
+        &.iframe_box {
+            iframe {
+                height: 480px;
+                width: 100%;
+                max-width: 800px;
+                margin: auto;
+            }
+        }
+        img {
+            @media (max-width: $xs) {
+                height: 280px;
+            }
+            height: 480px;
+            width: auto;
+            object-fit: contain;
+        }
+    }
+    .slider-control-bottomcenter {
+        ul {
+            top: 32px !important;
+        }
+        svg {
+            fill: var(--white-color);
+        }
+    }
+    button {
+        border-radius: 100%;
+        background: none !important;
+    }
+}

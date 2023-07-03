@@ -1,0 +1,15 @@
+$xs: 768px;
+$md: 1024px;
+$lg: 1440px;
+
+@function space($num) {
+    @return calc($num * var(--space));
+}
+
+.peopoleBox {
+    padding: 0 space(2);
+    text-align: center;
+    @media (max-width: $xs) {
+        padding: 0;
+    }
+}

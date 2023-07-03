@@ -1,0 +1,12 @@
+@function space($num) {
+    @return calc($num * var(--space));
+}
+.filtedContainer {
+    .filterTitle {
+        text-align: center;
+        color: var(--soft--color);
+        padding: space(2) space(1);
+        border-top: solid 1px var(--highlight-color);
+        border-bottom: solid 1px var(--highlight-color);
+    }
+}

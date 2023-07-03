@@ -1,0 +1,19 @@
+@function space($num) {
+    @return calc($num * var(--space));
+}
+
+.newsTitleContainer {
+    > h1,
+    p {
+        padding-left: space(1);
+        padding-right: space(1);
+    }
+}
+
+.newsContainer {
+    max-width: 800px;
+    padding-bottom: space(4);
+    .theme_hr {
+        margin-bottom: space(5);
+    }
+}

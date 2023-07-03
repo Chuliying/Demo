@@ -1,0 +1,104 @@
+$xs: 768px;
+$md: 1024px;
+$lg: 1440px;
+
+@function space($num) {
+    @return calc($num * var(--space));
+}
+
+#index_container {
+    .main_container {
+        padding-right: 0;
+        @media (max-width: $xs) {
+            padding: 0;
+        }
+    }
+
+    @media (max-width: $xs) {
+        h3 {
+            margin-bottom: space(3);
+        }
+    }
+    .relative {
+        overflow: hidden;
+        cursor: pointer;
+        .floatText {
+            position: absolute;
+            top: 42%;
+            width: 100%;
+            text-align: center;
+            transition: all 0.5s;
+            cursor: pointer;
+            @media (max-width: $xs) {
+                top: 30%;
+                h3 {
+                    margin-bottom: space(1);
+                    font-size: 1.25rem;
+                }
+            }
+            h3 {
+                text-shadow: 1px 1px 3px #00000045;
+            }
+        }
+
+        img {
+            filter: grayscale(0) brightness(1);
+            transform: scale(1);
+            transition: all 0.5s;
+        }
+        &:hover {
+            .floatText {
+                color: var(--highlight-color);
+            }
+            img {
+                filter: grayscale(1) brightness(2);
+                transform: scale(1.03);
+            }
+        }
+    }
+
+    .cateContainer {
+        flex-flow: row wrap;
+        flex: 1;
+        display: flex;
+
+        @media (max-width: $xs) {
+            display: block;
+            padding: space(0);
+            margin: 0;
+        }
+        > div {
+            display: block;
+            width: 50%;
+            @media (max-width: $xs) {
+                width: auto;
+            }
+        }
+    }
+}
+
+.indexTitle {
+    width: 300px;
+    @media (max-width: $xs) {
+        width: auto;
+        margin: space(3) auto;
+    }
+}
+
+.indexNewsList {
+    flex: 1;
+    @media (max-width: $xs) {
+        > ul {
+            display: block;
+            margin: 0 space(-2);
+            width: auto;
+        }
+    }
+    a h3 {
+        margin-bottom: space(1);
+        @media (max-width: $xs) {
+            font-size: 1.15rem;
+            margin-bottom: space(0.5) !important;
+        }
+    }
+}
